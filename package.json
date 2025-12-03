@@ -1,10 +1,24 @@
 {
-  "name": "TemplateProject",
+  "name": "crypta",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "android:apk": "cd android && ./gradlew assembleRelease && cd ..",
+    "android:aab": "cd android && ./gradlew bundleRelease && cd ..",
+
     "ios": "react-native run-ios",
+    "ios:se": "yarn react-native run-ios --device \"Amnesia Amnesia’s iPhone\"",
+    "ios:pro": "yarn react-native run-ios --device \"iPhone\"",
+    "ios:phone": "xcrun simctl boot \"iPhone 16 Pro\" & open -a Simulator",
+    "ios:table": "xcrun simctl boot \"iPad Air 11-inch (M3)\" & open -a Simulator",
+    "ios:list": "xcrun simctl list devices",
+
+    "pod:init": "bundle install",
+    "pod": "cd ios && bundle exec pod install",
+
+    "rename": "npx react-native-rename@latest \"Crypta\" -b \"crypta.io\" --iosBundleID \"io.crypta.app\" --skipGitStatusCheck",
+
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest"

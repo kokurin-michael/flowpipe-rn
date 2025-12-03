@@ -1,4 +1,4 @@
-package com.templateproject
+package crypta.io
 
 import android.app.Application
 import com.facebook.react.PackageList
