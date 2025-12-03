@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/FormularNeutral-Bold.ttf",
+      "sha1": "e5c6c0a3db91cb83b65002c6dbfa6570fdcaa1d3"
+    },
+    {
+      "path": "src/assets/fonts/FormularNeutral-Medium.ttf",
+      "sha1": "b43f4d125f606fa0b8a4b5b3fdb34a6b8fbfd69f"
+    },
+    {
+      "path": "src/assets/fonts/FormularNeutral-Regular.ttf",
+      "sha1": "e81e6e974c13cbd6830ede05a0a638ede5aa8940"
+    }
+  ]
+}
