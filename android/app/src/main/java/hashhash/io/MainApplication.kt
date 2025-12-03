@@ -1,4 +1,4 @@
-package crypta.io
+package hashhash.io
 
 import android.app.Application
 import com.facebook.react.PackageList

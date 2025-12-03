@@ -1,5 +1,5 @@
 {
-  "name": "crypta",
+  "name": "hashhash",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -20,7 +20,7 @@
     "lint": "eslint . --fix",
     "test": "jest",
     "font": "npx react-native-asset",
-    "rename": "npx react-native-rename@latest \"Crypta\" -b \"crypta.io\" --iosBundleID \"io.crypta.app\" --skipGitStatusCheck",
+    "rename": "npx react-native-rename@latest \"HashHash\" -b \"hashhash.io\" --iosBundleID \"io.hashhash\" --skipGitStatusCheck",
     "postinstall": "patch-package"
   },
   "dependencies": {

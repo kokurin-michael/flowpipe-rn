@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "Crypta.app"
-               BlueprintName = "Crypta"
-               ReferencedContainer = "container:Crypta.xcodeproj">
+               BuildableName = "HashHash.app"
+               BlueprintName = "HashHash"
+               ReferencedContainer = "container:HashHash.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "CryptaTests.xctest"
-               BlueprintName = "CryptaTests"
-               ReferencedContainer = "container:Crypta.xcodeproj">
+               BuildableName = "HashHashTests.xctest"
+               BlueprintName = "HashHashTests"
+               ReferencedContainer = "container:HashHash.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Crypta.app"
-            BlueprintName = "Crypta"
-            ReferencedContainer = "container:Crypta.xcodeproj">
+            BuildableName = "HashHash.app"
+            BlueprintName = "HashHash"
+            ReferencedContainer = "container:HashHash.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Crypta.app"
-            BlueprintName = "Crypta"
-            ReferencedContainer = "container:Crypta.xcodeproj">
+            BuildableName = "HashHash.app"
+            BlueprintName = "HashHash"
+            ReferencedContainer = "container:HashHash.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
