@@ -8,7 +8,7 @@ import { EntryScreen } from '@screens';
 function App() {
   return (
     <SafeAreaProvider>
-      <StatusBar barStyle={'light-content'} />
+      <StatusBar barStyle={'default'} />
         <EntryScreen />
     </SafeAreaProvider>
   );
