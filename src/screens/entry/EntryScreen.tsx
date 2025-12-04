@@ -7,7 +7,7 @@ export const EntryScreen = () => {
   const {t} = useTranslation('entry');
 
   return (<KeyboardDismissPressable style={styles.container}>
-    <ActivityOverlay />
+    <ActivityOverlay isVisible={false} />
     <KeyboardStickyView style={styles.input}>
         <AppTextInput placeholder={t('input')}/>
     </KeyboardStickyView>
