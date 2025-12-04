@@ -1,18 +1,21 @@
-import { Text, TextInput, View } from 'react-native';
+import { Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { AppTextInputProps, AppTextInputRef } from './types';
 import { useAppTextInput } from './useAppTextInput';
 import { StyleSheet } from 'react-native-unistyles';
 import { forwardRef } from 'react';
+import { CloseIcon } from '@assets';
 
 export const AppTextInput = forwardRef<AppTextInputRef, AppTextInputProps>(
   (props, ref) => {
     const {
       localRef,
       isPlaceholderVisible,
+      isClearVisible,
       isFocused,
       onChangeText,
       onFocus,
       onBlur,
+      clear,
     } = useAppTextInput(ref, props);
 
     return (
@@ -24,24 +27,31 @@ export const AppTextInput = forwardRef<AppTextInputRef, AppTextInputProps>(
         ]}>
         <TextInput
           {...props}
+          cursorColor={styles.cursor.color}
           ref={localRef}
           placeholder={undefined}
           style={[
-            styles.flex,
             styles.font,
             styles.input,
+            styles.paddingVertical,
             props.style,
             props.error && styles.inputError,
           ]}
           onChangeText={onChangeText}
           onFocus={onFocus}
           onBlur={onBlur}
-          selectionColor={styles.selection.color}
+          selectionColor={styles.cursor.color}
         />
+
+        {isClearVisible && !props.multiline ? <TouchableOpacity style={styles.clear} onPress={clear}>
+          <CloseIcon width={24} height={24} />
+        </TouchableOpacity> : null}
+
         {isPlaceholderVisible ? (
           <View
             style={[
               styles.placeholderContainer,
+              styles.paddingVertical,
               props.placeholderContainerStyle,
             ]}
             pointerEvents={'none'}>
@@ -60,19 +70,25 @@ export const AppTextInput = forwardRef<AppTextInputRef, AppTextInputProps>(
 const styles = StyleSheet.create(
   (theme) => ({
     flex: {flex: 1},
+    paddingVertical: {
+      paddingVertical: 16,
+    },
     container:(isFocused: boolean) => ({
+      flexDirection: 'row',
       minHeight: 48,
       borderWidth: 1,
       paddingHorizontal: 16,
       borderColor: isFocused
         ? theme.colors.neutral[500]
         : theme.colors.neutral[100],
+      justifyContent: 'center',
     }),
     font: {
       ...theme.fonts.s14w400,
       lineHeight: 17,
     },
     input: {
+      flex: 1,
       textAlignVertical: 'center',
       color: theme.colors.neutral[500],
     },
@@ -87,7 +103,7 @@ const styles = StyleSheet.create(
     placeholderText: {
       color: theme.colors.neutral[200],
     },
-    selection: {
+    cursor: {
       color: theme.colors.primary[500],
     },
     gap: {gap: 8},
@@ -106,5 +122,9 @@ const styles = StyleSheet.create(
       ...theme.fonts.s12w400,
       color: theme.colors.error[500],
     },
+
+    clear: {
+      justifyContent: 'center',
+    }
   })
 );

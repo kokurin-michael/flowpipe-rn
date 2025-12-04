@@ -1,5 +1,5 @@
 export default {
   entry: {
-    helloWorld: 'Hello World!',
-  }
-}
+    input: 'Enter any value you like...',
+  },
+};

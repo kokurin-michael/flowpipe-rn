@@ -1,5 +1,5 @@
 export default {
   entry: {
-    helloWorld: 'Привет мир!',
+    helloWorld: 'Введите любое значение...',
   }
 }

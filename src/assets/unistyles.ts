@@ -43,18 +43,11 @@ const colors = {
   }
 } as const;
 
-const fontFamily = {
-  regular: 'FormularNeutral-Regular',
-  medium: 'FormularNeutral-Medium',
-  bold: 'FormularNeutral-Bold',
-} as const
-
-type FontWeightKey = '400' | '500'
-
-const assocFontWeight: Record<FontWeightKey, string> = {
-  '400': fontFamily.regular,
-  '500': fontFamily.medium,
-}
+const assocFontWeight: Record<'400' | '500' | '600', string> = {
+  '400': 'FormularNeutral-Regular',
+  '500': 'FormularNeutral-Medium',
+  '600': 'FormularNeutral-Bold',
+};
 
 const fonts = {
   s10w400: {
@@ -125,8 +118,6 @@ const fonts = {
   },
 } as const
 
-export type FontKey = keyof typeof fonts;
-
 const paddings = {
   screenHorizontal: 16
 } as const;
@@ -151,6 +142,7 @@ const breakpoints = {
 
 type AppBreakpoints = typeof breakpoints
 type AppThemes = typeof appThemes
+export type AppFonts = keyof typeof fonts;
 
 declare module 'react-native-unistyles' {
   export interface UnistylesThemes extends AppThemes {}

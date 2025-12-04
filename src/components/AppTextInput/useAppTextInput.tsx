@@ -25,6 +25,11 @@ export const useAppTextInput = (ref: ForwardedRef<AppTextInputRef>, props: AppTe
     [isFocused, props.placeholder, text],
   );
 
+  const isClearVisible = useMemo(
+    () => isFocused && !isEmpty(text),
+    [isFocused, text],
+  );
+
   const onChangeText = useCallback(
     (t: string) => {
       setText(t);
@@ -52,7 +57,6 @@ export const useAppTextInput = (ref: ForwardedRef<AppTextInputRef>, props: AppTe
   const clear = useCallback(() => {
     const current = localRef.current!;
     current.clear();
-    current.blur();
     setText('');
     props.onChangeText ? props.onChangeText('') : null;
     props.onClear ? props.onClear() : null;
@@ -68,9 +72,11 @@ export const useAppTextInput = (ref: ForwardedRef<AppTextInputRef>, props: AppTe
   return {
     localRef,
     isPlaceholderVisible,
+    isClearVisible,
     isFocused,
     onChangeText,
     onFocus,
     onBlur,
+    clear,
   };
 };
