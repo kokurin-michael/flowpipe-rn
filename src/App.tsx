@@ -1,15 +1,18 @@
+import '@assets/unistyles.ts';
 import { StatusBar} from 'react-native';
 import {
   SafeAreaProvider,
 } from 'react-native-safe-area-context';
-import { StyleSheet } from 'react-native-unistyles'
 import { EntryScreen } from '@screens';
+import { KeyboardProvider } from 'react-native-keyboard-controller';
 
 function App() {
   return (
     <SafeAreaProvider>
-      <StatusBar barStyle={'default'} />
+      <KeyboardProvider>
+        <StatusBar barStyle={'default'} />
         <EntryScreen />
+      </KeyboardProvider>
     </SafeAreaProvider>
   );
 }

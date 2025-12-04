@@ -3213,7 +3213,7 @@ SPEC CHECKSUMS:
   React-utils: a9abebe9dc25642955b5d2cec8c16bbf55a1bc52
   React-webperformancenativemodule: 85dce57a9e73457a3686aee0d8e929518713fc05
   ReactAppDependencyProvider: cc2795efe30a023c3a505676b9c748b664b9c0a1
-  ReactCodegen: 21cbcadc3845e07382835fbe8f586e241c891f48
+  ReactCodegen: 897bad2d2f722ff4dc46fc144f9cc018db0e2ce4
   ReactCommon: c5803af00bd3737dc1631749b1f1da5beba5b049
   RNBootSplash: 1e2d285376d8901d0b106da4829817e53f3eed94
   RNCClipboard: 962296f7af77f6c039b683e21c2e2255af9c05df
