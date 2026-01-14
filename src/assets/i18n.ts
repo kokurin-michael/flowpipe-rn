@@ -1,23 +1,19 @@
+import 'dayjs/locale/en';
+import 'dayjs/locale/ru';
+
 import dayjs from 'dayjs';
 import i18n from 'i18next';
 import {initReactI18next} from 'react-i18next';
 import * as RNLocalize from 'react-native-localize';
-import 'dayjs/locale/en';
-import 'dayjs/locale/ru';
+
 import {en, ru} from './locales';
 
 let lang = 'en';
 const locales = RNLocalize.getLocales();
 
-export const resources = {
-  en,
-  ru,
-};
+export {default} from 'i18next';
 
-if (
-  Array.isArray(locales) &&
-  resources[locales[0].languageCode] !== undefined
-) {
+if (Array.isArray(locales) && resources[locales[0].languageCode] !== undefined) {
   lang = locales[0].languageCode;
 }
 
@@ -33,4 +29,7 @@ i18n.use(initReactI18next).init({
   defaultNS: 'entry',
 });
 
-export default i18n;
+export const resources = {
+  en,
+  ru,
+};

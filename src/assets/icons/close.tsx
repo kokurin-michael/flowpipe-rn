@@ -1,12 +1,12 @@
-import {FC} from 'react';
+import type {IconProps} from '@types';
+import type {FC} from 'react';
 import Svg, {Path} from 'react-native-svg';
-import { IconProps } from '@types';
 
 export const CloseIcon: FC<IconProps> = props => {
   return (
     <Svg
       width={props.size ?? props.width ?? '24'}
-      height={props.size ??props.height ?? '24'}
+      height={props.size ?? props.height ?? '24'}
       viewBox={props.viewBox ?? '0 0 24 24'}
       fill={'none'}>
       <Path

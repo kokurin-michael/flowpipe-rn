@@ -1,18 +1,20 @@
-import React, { useEffect } from 'react';
-import { StyleSheet } from 'react-native';
+import {useEffect} from 'react';
+import {StyleSheet} from 'react-native';
+
 import Animated, {
-  useSharedValue,
+  Easing,
   useAnimatedStyle,
+  useSharedValue,
   withRepeat,
   withTiming,
-  Easing,
 } from 'react-native-reanimated';
-import { images } from '@assets';
+
+import {images} from '@assets';
 
 export const AppActivityIndicator = ({
-                                               size = 30,
-                                               duration = 900,
-                                             }: {
+  size = 30,
+  duration = 900,
+}: {
   size?: number;
   duration?: number;
 }) => {
@@ -30,12 +32,12 @@ export const AppActivityIndicator = ({
   }, [duration, rotation]);
 
   const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{ rotate: `${rotation.value}deg` }],
+    transform: [{rotate: `${rotation.value}deg`}],
   }));
 
   return (
     <Animated.Image
-      style={[styles.container, { width: size, height: size }, animatedStyle]}
+      style={[styles.container, {width: size, height: size}, animatedStyle]}
       source={images.spinner}
     />
   );
@@ -43,7 +45,7 @@ export const AppActivityIndicator = ({
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
   },
 });

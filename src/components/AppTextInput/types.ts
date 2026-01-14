@@ -1,5 +1,5 @@
-import { StyleProp, TextInput, TextInputProps, ViewStyle } from 'react-native';
-import { ComponentRef } from 'react';
+import type {ComponentRef} from 'react';
+import type {StyleProp, TextInput, TextInputProps, ViewStyle} from 'react-native';
 
 type AppTextInputRef = {clear: () => void} & Partial<ComponentRef<typeof TextInput>>;
 
@@ -13,4 +13,4 @@ interface AppTextInputProps extends TextInputProps {
   onClear?: () => void;
 }
 
-export { type AppTextInputRef, type AppTextInputProps };
+export {type AppTextInputProps, type AppTextInputRef};

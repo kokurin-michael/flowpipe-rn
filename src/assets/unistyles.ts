@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native-unistyles'
+import {StyleSheet} from 'react-native-unistyles';
 
 const colors = {
   transparent: 'rgba(0, 0, 0, 0)',
@@ -6,16 +6,16 @@ const colors = {
   black: '#000000',
 
   primary: {
-    50:  '#ECF3FB',
+    50: '#ECF3FB',
     100: '#DAE7F7',
     300: '#8BB8E6',
     500: '#018CD5',
     600: '#186EA6',
   },
   neutral: {
-    0:   '#ECF3FB',
-    20:  '#F4F5F6',
-    50:  '#E3E5E8',
+    0: '#ECF3FB',
+    20: '#F4F5F6',
+    50: '#E3E5E8',
     100: '#C8CCD1',
     200: '#949BA5',
     300: '#626D7B',
@@ -37,10 +37,10 @@ const colors = {
     500: '#A31111',
   },
   warning: {
-    50:  '#FBEBCF',
+    50: '#FBEBCF',
     100: '#FBD4A4',
     500: '#EB8602',
-  }
+  },
 } as const;
 
 const assocFontWeight: Record<'400' | '500' | '600', string> = {
@@ -116,37 +116,42 @@ const fonts = {
     fontWeight: '500' as const,
     fontFamily: assocFontWeight['500'],
   },
-} as const
+} as const;
 
 const paddings = {
-  screenHorizontal: 16
+  screenHorizontal: 16,
 } as const;
+
+const shadows = {
+  tab: [{offsetX: 0, offsetY: -1, color: '#39393908', blurRadius: 20}],
+};
 
 const lightTheme = {
   colors,
   fonts,
   paddings,
-}
+  shadows,
+};
 
 const appThemes = {
   common: lightTheme,
-}
+};
 
 const breakpoints = {
   xs: 0,
   sm: 300,
   md: 500,
   lg: 800,
-  xl: 1200
-}
+  xl: 1200,
+};
 
-type AppBreakpoints = typeof breakpoints
-type AppThemes = typeof appThemes
+type AppBreakpoints = typeof breakpoints;
+type AppThemes = typeof appThemes;
 export type AppFonts = keyof typeof fonts;
 
 declare module 'react-native-unistyles' {
-  export interface UnistylesThemes extends AppThemes {}
   export interface UnistylesBreakpoints extends AppBreakpoints {}
+  export interface UnistylesThemes extends AppThemes {}
 }
 
 StyleSheet.configure({
@@ -154,5 +159,5 @@ StyleSheet.configure({
     initialTheme: 'common',
   },
   breakpoints,
-  themes: appThemes
-})
+  themes: appThemes,
+});

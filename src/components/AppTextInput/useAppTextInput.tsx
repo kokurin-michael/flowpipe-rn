@@ -1,17 +1,10 @@
-import {
-  ForwardedRef,
-  useCallback,
-  useImperativeHandle,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
-import { BlurEvent, FocusEvent, TextInput } from 'react-native';
-import {
-  AppTextInputProps,
-  AppTextInputRef,
-} from './types';
-import { isEmpty } from 'lodash';
+import {useCallback, useImperativeHandle, useMemo, useRef, useState} from 'react';
+
+import {isEmpty} from 'lodash';
+import type {ForwardedRef} from 'react';
+import type {BlurEvent, FocusEvent, TextInput} from 'react-native';
+
+import type {AppTextInputProps, AppTextInputRef} from './types';
 
 export const useAppTextInput = (ref: ForwardedRef<AppTextInputRef>, props: AppTextInputProps) => {
   const localRef = useRef<TextInput>(null);
@@ -25,15 +18,12 @@ export const useAppTextInput = (ref: ForwardedRef<AppTextInputRef>, props: AppTe
     [isFocused, props.placeholder, text],
   );
 
-  const isClearVisible = useMemo(
-    () => isFocused && !isEmpty(text),
-    [isFocused, text],
-  );
+  const isClearVisible = useMemo(() => isFocused && !isEmpty(text), [isFocused, text]);
 
   const onChangeText = useCallback(
     (t: string) => {
       setText(t);
-      props.onChangeText ? props.onChangeText(t) : null;
+      props.onChangeText?.(t);
     },
     [props],
   );
@@ -41,7 +31,7 @@ export const useAppTextInput = (ref: ForwardedRef<AppTextInputRef>, props: AppTe
   const onFocus = useCallback(
     (e: FocusEvent) => {
       setIsFocused(true);
-      props.onFocus ? props.onFocus(e) : null;
+      props.onFocus?.(e);
     },
     [props],
   );
@@ -49,7 +39,7 @@ export const useAppTextInput = (ref: ForwardedRef<AppTextInputRef>, props: AppTe
   const onBlur = useCallback(
     (e: BlurEvent) => {
       setIsFocused(false);
-      props.onBlur ? props.onBlur(e) : null;
+      props.onBlur?.(e);
     },
     [props],
   );
@@ -58,8 +48,8 @@ export const useAppTextInput = (ref: ForwardedRef<AppTextInputRef>, props: AppTe
     const current = localRef.current!;
     current.clear();
     setText('');
-    props.onChangeText ? props.onChangeText('') : null;
-    props.onClear ? props.onClear() : null;
+    props.onChangeText?.('');
+    props.onClear?.();
   }, [props]);
 
   useImperativeHandle(ref, () => ({
