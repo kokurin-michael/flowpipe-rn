@@ -1,4 +1,4 @@
-package hashhash.io
+package flowpipe.io
 
 import android.app.Application
 import com.facebook.react.PackageList

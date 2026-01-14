@@ -1,5 +1,5 @@
 {
-  "name": "hashhash",
+  "name": "flowpipe",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -20,7 +20,7 @@
     "lint": "eslint . --fix",
     "test": "jest",
     "font": "npx react-native-asset",
-    "rename": "npx react-native-rename@latest \"HashHash\" -b \"hashhash.io\" --iosBundleID \"io.hashhash\" --skipGitStatusCheck",
+    "rename": "npx react-native-rename@latest \"FlowPipe\" -b \"flowpipe.io\" --iosBundleID \"io.flowpipe\" --skipGitStatusCheck",
     "postinstall": "patch-package"
   },
   "dependencies": {
