@@ -13,6 +13,11 @@ const locales = RNLocalize.getLocales();
 
 export {default} from 'i18next';
 
+export const resources = {
+  en,
+  ru,
+};
+
 if (Array.isArray(locales) && resources[locales[0].languageCode] !== undefined) {
   lang = locales[0].languageCode;
 }
@@ -28,8 +33,3 @@ i18n.use(initReactI18next).init({
   ns: Object.keys(en),
   defaultNS: 'entry',
 });
-
-export const resources = {
-  en,
-  ru,
-};

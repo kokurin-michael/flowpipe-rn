@@ -1,3 +1,4 @@
+const {withRozenite} = require('@rozenite/metro');
 const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
 
 /**
@@ -11,8 +12,7 @@ const {assetExts, sourceExts} = defaultConfig.resolver;
 
 const config = {
   transformer: {
-    babelTransformerPath:
-      require.resolve('react-native-svg-transformer/react-native'),
+    babelTransformerPath: require.resolve('react-native-svg-transformer/react-native'),
   },
   resolver: {
     assetExts: assetExts.filter(ext => ext !== 'svg'),
@@ -20,4 +20,11 @@ const config = {
   },
 };
 
-module.exports = mergeConfig(getDefaultConfig(__dirname), config);
+module.exports = withRozenite(mergeConfig(getDefaultConfig(__dirname), config), {
+  enabled: process.env.WITH_ROZENITE === 'true',
+  include: [
+    '@rozenite/network-activity-plugin',
+    '@rozenite/react-navigation-plugin',
+    '@rozenite/overlay-plugin',
+  ],
+});
