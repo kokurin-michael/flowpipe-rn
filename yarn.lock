@@ -6541,6 +6541,7 @@ __metadata:
     react-i18next: "npm:^16.3.5"
     react-native: "npm:0.82.1"
     react-native-bootsplash: "npm:^6.3.11"
+    react-native-device-info: "npm:^15.0.1"
     react-native-edge-to-edge: "npm:^1.7.0"
     react-native-gesture-handler: "npm:^2.29.1"
     react-native-keyboard-controller: "npm:^1.20.0"
@@ -10102,6 +10103,15 @@ __metadata:
   bin:
     react-native-bootsplash: cli.js
   checksum: 10c0/eb3d41260dfb85a2556b49a846bc66b8b6e20607d62121729591737e151fd19e6c3b8b1efddd785c232f0c2d2ede25de6ed96846101fcecaa3fc518ac6b724dd
+  languageName: node
+  linkType: hard
+
+"react-native-device-info@npm:^15.0.1":
+  version: 15.0.1
+  resolution: "react-native-device-info@npm:15.0.1"
+  peerDependencies:
+    react-native: "*"
+  checksum: 10c0/f33a28b44bc9a67939f2c837ea55c6f59f3096323b5ccc834093bece941d343bad3d86b0faa9340004c2e657abe47fac6cee539d9274f5fabfb5745bfdc77c92
   languageName: node
   linkType: hard
 

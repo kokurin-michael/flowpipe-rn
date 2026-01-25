@@ -173,6 +173,7 @@ module.exports = {
         'babel.config.js',
         'metro.config.js',
         'src/assets/images/**/*',
+        'src/assets/bootsplash/**/*',
       ],
       env: {node: true},
       rules: {

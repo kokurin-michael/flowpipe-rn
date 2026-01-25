@@ -10,11 +10,13 @@
 		0C80B921A6F3F58F76C31292 /* libPods-FlowPipe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-FlowPipe.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		592A3EA383EE48158E9CBD53 /* FormularNeutral-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16C06650145A4926B6C5CE9A /* FormularNeutral-Bold.ttf */; };
+		592D0297C39744A692BC1EFF /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F064983B144F8FA98B7120 /* BootSplash.storyboard */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8D2E4665BE0A40AF9CFB8389 /* FormularNeutral-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 74B9650879404EEF98DBBF61 /* FormularNeutral-Regular.ttf */; };
 		9ACC48D967217896E0B00082 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		A07626A8917E4549B0580140 /* FormularNeutral-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 773026BD062246A5B2B6538C /* FormularNeutral-Medium.ttf */; };
+		AC246E2B06404DF49FC5F09F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF4FEFF1408243B988DEE318 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,12 +26,14 @@
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = FlowPipe/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		16C06650145A4926B6C5CE9A /* FormularNeutral-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "FormularNeutral-Bold.ttf"; path = "../src/assets/fonts/FormularNeutral-Bold.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-FlowPipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowPipe.debug.xcconfig"; path = "Target Support Files/Pods-FlowPipe/Pods-FlowPipe.debug.xcconfig"; sourceTree = "<group>"; };
+		55F064983B144F8FA98B7120 /* BootSplash.storyboard */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = BootSplash.storyboard; path = FlowPipe/BootSplash.storyboard; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-FlowPipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowPipe.release.xcconfig"; path = "Target Support Files/Pods-FlowPipe/Pods-FlowPipe.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-FlowPipe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlowPipe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B9650879404EEF98DBBF61 /* FormularNeutral-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "FormularNeutral-Regular.ttf"; path = "../src/assets/fonts/FormularNeutral-Regular.ttf"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = FlowPipe/AppDelegate.swift; sourceTree = "<group>"; };
 		773026BD062246A5B2B6538C /* FormularNeutral-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "FormularNeutral-Medium.ttf"; path = "../src/assets/fonts/FormularNeutral-Medium.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = FlowPipe/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF4FEFF1408243B988DEE318 /* Colors.xcassets */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = FlowPipe/Colors.xcassets; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -53,6 +57,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				55F064983B144F8FA98B7120 /* BootSplash.storyboard */,
+				BF4FEFF1408243B988DEE318 /* Colors.xcassets */,
 			);
 			name = FlowPipe;
 			sourceTree = "<group>";
@@ -181,6 +187,8 @@
 				592A3EA383EE48158E9CBD53 /* FormularNeutral-Bold.ttf in Resources */,
 				A07626A8917E4549B0580140 /* FormularNeutral-Medium.ttf in Resources */,
 				8D2E4665BE0A40AF9CFB8389 /* FormularNeutral-Regular.ttf in Resources */,
+				592D0297C39744A692BC1EFF /* BootSplash.storyboard in Resources */,
+				AC246E2B06404DF49FC5F09F /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
