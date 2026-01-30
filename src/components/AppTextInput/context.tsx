@@ -3,8 +3,14 @@ import {createContext} from 'react';
 import type {AppTextInputState} from './types';
 
 interface AppTextInputContextType {
-  type: AppTextInputState;
-  setType: (value: AppTextInputState) => void;
+  state: AppTextInputState;
+  setState: (value: AppTextInputState) => void;
+
+  isFocused: boolean;
+  setFocused: (value: boolean) => void;
+
+  text: string;
+  setText: (value: string) => void;
 
   clear: () => void;
 }

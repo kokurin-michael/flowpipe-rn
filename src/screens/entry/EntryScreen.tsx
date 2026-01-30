@@ -1,7 +1,7 @@
 import {useCallback, useRef} from 'react';
 import {Text, useWindowDimensions, View} from 'react-native';
 
-import BottomSheet, {BottomSheetBackdrop, BottomSheetFlatList} from '@gorhom/bottom-sheet';
+import type BottomSheet from '@gorhom/bottom-sheet';
 import {useTranslation} from 'react-i18next';
 import {KeyboardStickyView} from 'react-native-keyboard-controller';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -30,35 +30,47 @@ export const EntryScreen = () => {
       <KeyboardDismissPressable style={styles.container}>
         <ActivityOverlay isVisible={false} />
         <KeyboardStickyView style={styles.input}>
-          <AppTextInput placeholder={t('input')} />
+          <AppTextInput.Root initialState={'error'} initialText={'Hello default'}>
+            <AppTextInput.Container>
+              <AppTextInput.Input />
+              <AppTextInput.Placeholder text={'Placeholder'} />
+            </AppTextInput.Container>
+            <AppTextInput.Message message={'Message'} />
+          </AppTextInput.Root>
         </KeyboardStickyView>
       </KeyboardDismissPressable>
 
-      <BottomSheet
-        ref={bottomSheetRef}
-        enablePanDownToClose
-        footerComponent={() => (
-          <View style={{paddingVertical: 20, backgroundColor: 'white'}}>
-            <Text>{'blalalalalalalalalalalal'}</Text>
-          </View>
-        )}
-        backdropComponent={props => (
-          <BottomSheetBackdrop {...props} appearsOnIndex={0} disappearsOnIndex={-1} opacity={0.6} />
-        )}
-        topInset={top}>
-        <BottomSheetFlatList
-          ListHeaderComponent={() => (
-            <View style={{paddingVertical: 20, backgroundColor: 'white'}}>
-              <AppTextInput />
-            </View>
-          )}
-          stickyHeaderIndices={[0]}
-          contentContainerStyle={{paddingHorizontal: 16, minHeight: height - top}}
-          data={Array.from({length: 4}, (_, i) => i)}
-          keyExtractor={(_, index) => index.toString()}
-          renderItem={renderItem}
-        />
-      </BottomSheet>
+      {/*<BottomSheet*/}
+      {/*  ref={bottomSheetRef}*/}
+      {/*  enablePanDownToClose*/}
+      {/*  footerComponent={() => (*/}
+      {/*    <View style={{paddingVertical: 20, backgroundColor: 'white'}}>*/}
+      {/*      <Text>{'blalalalalalalalalalalal'}</Text>*/}
+      {/*    </View>*/}
+      {/*  )}*/}
+      {/*  backdropComponent={props => (*/}
+      {/*    <BottomSheetBackdrop {...props} appearsOnIndex={0} disappearsOnIndex={-1} opacity={0.6} />*/}
+      {/*  )}*/}
+      {/*  topInset={top}>*/}
+      {/*  <BottomSheetFlatList*/}
+      {/*    ListHeaderComponent={() => (*/}
+      {/*      <View style={{paddingVertical: 20, backgroundColor: 'white'}}>*/}
+      {/*        /!*<AppTextInput.Root>*!/*/}
+      {/*        /!*  <AppTextInput.Container>*!/*/}
+      {/*        /!*    <AppTextInput.Input />*!/*/}
+      {/*        /!*    <AppTextInput.Placeholder text={'Placeholder'} />*!/*/}
+      {/*        /!*  </AppTextInput.Container>*!/*/}
+      {/*        /!*  <AppTextInput.Message message={'Message'} />*!/*/}
+      {/*        /!*</AppTextInput.Root>*!/*/}
+      {/*      </View>*/}
+      {/*    )}*/}
+      {/*    stickyHeaderIndices={[0]}*/}
+      {/*    contentContainerStyle={{paddingHorizontal: 16, minHeight: height - top}}*/}
+      {/*    data={Array.from({length: 4}, (_, i) => i)}*/}
+      {/*    keyExtractor={(_, index) => index.toString()}*/}
+      {/*    renderItem={renderItem}*/}
+      {/*  />*/}
+      {/*</BottomSheet>*/}
     </>
   );
 };
