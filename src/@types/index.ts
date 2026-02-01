@@ -1,7 +1,5 @@
 import type {SvgProps} from 'react-native-svg';
 
-interface IconProps extends SvgProps {
-  size?: number;
-}
+type IconProps = SvgProps;
 
 export {type IconProps};

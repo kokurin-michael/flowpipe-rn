@@ -63,27 +63,11 @@ const styles = StyleSheet.create(theme => ({
     ...theme.fonts.s14w400,
     lineHeight: 17,
   },
-  input: (state: AppTextInputState) => {
-    let color: string | undefined;
-
-    switch (state) {
-      case 'success': {
-        color = theme.colors.primary[500];
-        break;
-      }
-
-      case 'error': {
-        color = theme.colors.error[500];
-        break;
-      }
-    }
-
-    return {
-      flex: 1,
-      textAlignVertical: 'center',
-      color: color,
-    };
-  },
+  input: (state: AppTextInputState) => ({
+    flex: 1,
+    textAlignVertical: 'center',
+    color: state === 'error' ? theme.colors.error[500] : theme.colors.neutral[500],
+  }),
   cursor: {
     color: theme.colors.primary[500],
   },

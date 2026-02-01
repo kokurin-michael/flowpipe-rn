@@ -5,10 +5,10 @@ import {StyleSheet} from 'react-native-unistyles';
 import type {AppTextInputState} from '../types';
 import {useAppTextInput} from '../useAppTextInput';
 
-export const Message = ({message}: {message: string}) => {
+export const Message = ({message}: {message?: string}) => {
   const {state} = useAppTextInput();
 
-  return message ? (
+  return message && message.length > 0 ? (
     <Text numberOfLines={2} ellipsizeMode={'tail'} style={styles.message(state)}>
       {message}
     </Text>

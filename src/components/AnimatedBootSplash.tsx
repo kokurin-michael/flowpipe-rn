@@ -37,7 +37,7 @@ export function AnimatedBootSplash({isReady}: {isReady: boolean}) {
     ready: isReady,
 
     animate: () => {
-      const d = 2500;
+      const d = 1000;
 
       containerOpacity.value = withTiming(0, {duration: d});
       logoOpacity.value = withTiming(0, {duration: d});
