@@ -38,12 +38,15 @@ export const EntryScreen = () => {
                 <AppTextInput.Input textContentType={'URL'} onChangeText={setUrl} />
                 <AppTextInput.Placeholder text={t('placeholder')} />
               </AppTextInput.Container>
-              <AppButton buttonType={'transparent'} CenterComponent={t('download')} />
+              <AppButton
+                buttonType={'transparent'}
+                onPress={onDownloadPress}
+                CenterComponent={t('download')}
+              />
             </View>
             <AppTextInput.Message />
           </AppTextInput.Root>
           <AppButton
-            onPress={onDownloadPress}
             containerStyle={styles.flex}
             LeftComponent={CopyIcon}
             CenterComponent={t('clipboard')}
@@ -81,11 +84,11 @@ const styles = StyleSheet.create((theme, rt) => {
     },
     title: {
       ...headerText,
-      ...theme.fonts.s32w500,
+      ...theme.fonts.s22w500,
     },
     subtitle: {
       ...headerText,
-      ...theme.fonts.s22w500,
+      ...theme.fonts.s16w500,
     },
     footer: {
       position: 'absolute',

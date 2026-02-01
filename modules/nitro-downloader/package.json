@@ -1,0 +1,25 @@
+{
+  "name": "react-native-nitro-downloader",
+  "version": "0.1.0",
+  "description": "Local media downloaderdownloadee",
+  "main": "src/index",
+  "codegenConfig": {
+    "name": "NitroDownloaderSpec",
+    "type": "modules",
+    "jsSrcsDir": "src"
+  },
+  "author": "Mikhail <pierrworking@gmail.com> (https://github.com/pierrwork)",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/pierrwork/react-native-nitro-downloader#readme",
+  "create-react-native-library": {
+    "type": "nitro-module",
+    "languages": "kotlin-swift",
+    "tools": [
+      "eslint",
+      "jest",
+      "lefthook",
+      "release-it"
+    ],
+    "version": "0.57.0"
+  }
+}

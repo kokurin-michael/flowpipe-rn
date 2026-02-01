@@ -26,14 +26,15 @@
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = FlowPipe/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		16C06650145A4926B6C5CE9A /* FormularNeutral-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "FormularNeutral-Bold.ttf"; path = "../src/assets/fonts/FormularNeutral-Bold.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-FlowPipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowPipe.debug.xcconfig"; path = "Target Support Files/Pods-FlowPipe/Pods-FlowPipe.debug.xcconfig"; sourceTree = "<group>"; };
-		55F064983B144F8FA98B7120 /* BootSplash.storyboard */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = BootSplash.storyboard; path = FlowPipe/BootSplash.storyboard; sourceTree = "<group>"; };
+		55F064983B144F8FA98B7120 /* BootSplash.storyboard */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = BootSplash.storyboard; path = FlowPipe/BootSplash.storyboard; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-FlowPipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowPipe.release.xcconfig"; path = "Target Support Files/Pods-FlowPipe/Pods-FlowPipe.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-FlowPipe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlowPipe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B9650879404EEF98DBBF61 /* FormularNeutral-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "FormularNeutral-Regular.ttf"; path = "../src/assets/fonts/FormularNeutral-Regular.ttf"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = FlowPipe/AppDelegate.swift; sourceTree = "<group>"; };
 		773026BD062246A5B2B6538C /* FormularNeutral-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "FormularNeutral-Medium.ttf"; path = "../src/assets/fonts/FormularNeutral-Medium.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = FlowPipe/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BF4FEFF1408243B988DEE318 /* Colors.xcassets */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = FlowPipe/Colors.xcassets; sourceTree = "<group>"; };
+		B25C464B2F2F91E4005B4DB1 /* NitroDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NitroDownloader.swift; path = "../modules/nitro-downloader/ios/NitroDownloader.swift"; sourceTree = SOURCE_ROOT; };
+		BF4FEFF1408243B988DEE318 /* Colors.xcassets */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = FlowPipe/Colors.xcassets; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -82,6 +83,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				B25C46482F2F90A2005B4DB1 /* modules */,
 				13B07FAE1A68108700A75B9A /* FlowPipe */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
@@ -100,6 +102,22 @@
 				13B07F961A680F5B00A75B9A /* FlowPipe.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B25C46482F2F90A2005B4DB1 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				B25C46492F2F90B7005B4DB1 /* nitro-downloader */,
+			);
+			path = modules;
+			sourceTree = "<group>";
+		};
+		B25C46492F2F90B7005B4DB1 /* nitro-downloader */ = {
+			isa = PBXGroup;
+			children = (
+				B25C464B2F2F91E4005B4DB1 /* NitroDownloader.swift */,
+			);
+			path = "nitro-downloader";
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {

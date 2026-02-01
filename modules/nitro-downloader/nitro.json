@@ -1,0 +1,17 @@
+{
+  "cxxNamespace": ["nitrodownloader"],
+  "ios": {
+    "iosModuleName": "NitroDownloader"
+  },
+  "android": {
+    "androidNamespace": ["nitrodownloader"],
+    "androidCxxLibName": "nitrodownloader"
+  },
+  "autolinking": {
+    "NitroDownloader": {
+      "swift": "NitroDownloader",
+      "kotlin": "NitroDownloader"
+    }
+  },
+  "ignorePaths": ["node_modules"]
+}
