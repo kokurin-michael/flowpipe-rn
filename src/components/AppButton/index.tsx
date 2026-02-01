@@ -11,9 +11,11 @@ export const AppButton = ({
   CenterComponent,
   RightComponent,
   isDisabled,
+  onPress,
 }: AppButtonProps) => {
   return (
     <Pressable
+      onPress={onPress}
       style={({pressed}) => [styles.container(buttonType, pressed, isDisabled), containerStyle]}>
       {({pressed}) => (
         <View style={styles.content}>

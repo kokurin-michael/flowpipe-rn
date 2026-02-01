@@ -11,6 +11,8 @@ interface AppButtonProps {
   LeftComponent?: ComponentType<SvgProps>;
   CenterComponent?: ComponentType<SvgProps> | string;
   RightComponent?: ComponentType<SvgProps>;
+
+  onPress?: () => void;
 }
 
 export type {AppButtonProps, AppButtonType};

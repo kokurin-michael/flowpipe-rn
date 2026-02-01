@@ -8,12 +8,16 @@ import {StyleSheet} from 'react-native-unistyles';
 import {CopyIcon} from '@assets';
 import {AppButton, AppTextInput, KeyboardDismissPressable} from '@components';
 
+import {useDownload} from './useDownload';
+
 export const EntryScreen = () => {
   const {t, i18n} = useTranslation('entry');
   const onLocalePress = useCallback(() => {
     const next = i18n.language === 'ru' ? 'en' : 'ru';
     i18n.changeLanguage(next);
   }, [i18n]);
+
+  const {setUrl, onDownloadPress} = useDownload();
 
   return (
     <>
@@ -29,9 +33,9 @@ export const EntryScreen = () => {
 
         <KeyboardStickyView style={styles.footer}>
           <AppTextInput.Root>
-            <View style={{flexDirection: 'row', gap: 8}}>
-              <AppTextInput.Container containerStyle={{flex: 1}}>
-                <AppTextInput.Input textContentType={'URL'} />
+            <View style={styles.urlInputRow}>
+              <AppTextInput.Container containerStyle={styles.flex}>
+                <AppTextInput.Input textContentType={'URL'} onChangeText={setUrl} />
                 <AppTextInput.Placeholder text={t('placeholder')} />
               </AppTextInput.Container>
               <AppButton buttonType={'transparent'} CenterComponent={t('download')} />
@@ -39,7 +43,8 @@ export const EntryScreen = () => {
             <AppTextInput.Message />
           </AppTextInput.Root>
           <AppButton
-            containerStyle={{flex: 1}}
+            onPress={onDownloadPress}
+            containerStyle={styles.flex}
             LeftComponent={CopyIcon}
             CenterComponent={t('clipboard')}
           />
@@ -49,55 +54,58 @@ export const EntryScreen = () => {
   );
 };
 
-const styles = StyleSheet.create((theme, rt) => ({
-  container: {
-    flex: 1,
-    backgroundColor: theme.colors.white,
-    paddingTop: rt.insets.top,
-  },
-  header: {
-    paddingTop: '50%',
-    gap: 8,
-    paddingHorizontal: theme.paddings.screenHorizontal,
-  },
-  title: {
-    textAlign: 'center',
-    ...theme.fonts.s32w500,
+const styles = StyleSheet.create((theme, rt) => {
+  const headerText = {
+    textAlign: 'center' as const,
     color: theme.colors.neutral[500],
-  },
-  subtitle: {
-    textAlign: 'center',
-    ...theme.fonts.s22w500,
-    color: theme.colors.neutral[500],
-  },
-  contentContainer: {
-    backgroundColor: 'white',
-  },
-  itemContainer: {
-    padding: 6,
-    margin: 6,
-    backgroundColor: '#eee',
-  },
-  locale: {
-    position: 'absolute',
-    top: rt.insets.top,
-    end: theme.paddings.screenHorizontal,
-  },
-  localeLabel: {
-    ...theme.fonts.s16w400,
-    color: theme.colors.neutral[500],
-  },
-  footer: {
-    position: 'absolute',
-    start: 0,
-    end: 0,
-    flex: 1,
-    paddingHorizontal: theme.paddings.screenHorizontal,
-    paddingTop: 14,
-    paddingBottom: 12 + rt.insets.bottom,
-    bottom: 0,
-    boxShadow: theme.shadows.tab,
-    gap: 12,
-    backgroundColor: theme.colors.white,
-  },
-}));
+  };
+  return {
+    container: {
+      flex: 1,
+      backgroundColor: theme.colors.white,
+      paddingTop: rt.insets.top,
+    },
+    locale: {
+      position: 'absolute',
+      top: rt.insets.top,
+      end: theme.paddings.screenHorizontal,
+    },
+    localeLabel: {
+      ...theme.fonts.s16w400,
+      color: theme.colors.neutral[500],
+    },
+    header: {
+      paddingTop: '50%',
+      gap: 8,
+      paddingHorizontal: theme.paddings.screenHorizontal,
+    },
+    title: {
+      ...headerText,
+      ...theme.fonts.s32w500,
+    },
+    subtitle: {
+      ...headerText,
+      ...theme.fonts.s22w500,
+    },
+    footer: {
+      position: 'absolute',
+      start: 0,
+      end: 0,
+      flex: 1,
+      bottom: 0,
+      paddingHorizontal: theme.paddings.screenHorizontal,
+      paddingTop: 14,
+      paddingBottom: 12 + rt.insets.bottom,
+      gap: 12,
+      backgroundColor: theme.colors.white,
+      boxShadow: theme.shadows.tab,
+    },
+    urlInputRow: {
+      flexDirection: 'row',
+      gap: 8,
+    },
+    flex: {
+      flex: 1,
+    },
+  };
+});
