@@ -21,6 +21,7 @@ module.exports = {
   extends: [
     '@react-native-community',
     'plugin:react/jsx-runtime',
+    'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:promise/recommended',
     'plugin:eslint-comments/recommended',

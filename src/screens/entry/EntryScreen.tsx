@@ -26,10 +26,10 @@ export const EntryScreen = () => {
           <Text style={styles.localeLabel}>{i18n.language === 'ru' ? 'RU' : 'EN'}</Text>
         </Pressable>
 
-        <View style={styles.header}>
-          <Text style={styles.title}>{t('title')}</Text>
-          <Text style={styles.subtitle}>{t('subtitle')}</Text>
-        </View>
+        {/*<View style={styles.header}>*/}
+        {/*  <Text style={styles.title}>{t('title')}</Text>*/}
+        {/*  <Text style={styles.subtitle}>{t('subtitle')}</Text>*/}
+        {/*</View>*/}
 
         <KeyboardStickyView style={styles.footer}>
           <AppTextInput.Root>
