@@ -1,8 +1,10 @@
-import {useCallback, useState} from 'react';
+import {useState} from 'react';
 
 export const useDownload = () => {
   const [url, setUrl] = useState<string>('');
-  const onDownloadPress = useCallback(() => {}, []);
+  const onDownloadPress = () => {
+    url;
+  };
 
   return {
     setUrl,
