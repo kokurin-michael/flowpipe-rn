@@ -1,12 +1,17 @@
-import {forwardRef, useImperativeHandle, useRef} from 'react';
+import {useImperativeHandle, useRef} from 'react';
 import {TextInput} from 'react-native';
 
+import type {Ref} from 'react';
 import {StyleSheet} from 'react-native-unistyles';
 
 import type {AppTextInputProps, AppTextInputRef, AppTextInputState} from '../types';
 import {useAppTextInput} from '../useAppTextInput';
 
-export const Input = forwardRef<AppTextInputRef, AppTextInputProps>((props, ref) => {
+type InputProps = AppTextInputProps & {
+  ref?: Ref<AppTextInputRef>;
+};
+
+export const Input = ({ref, ...props}: InputProps) => {
   const {
     state,
     clear: clearAppTextInput,
@@ -53,7 +58,7 @@ export const Input = forwardRef<AppTextInputRef, AppTextInputProps>((props, ref)
       selectionColor={styles.cursor.color}
     />
   );
-});
+};
 
 const styles = StyleSheet.create(theme => ({
   paddingVertical: {
