@@ -5,7 +5,6 @@
 /// Copyright © Marc Rousavy @ Margelo
 ///
 
-import Foundation
 import NitroModules
 
 /// See ``HybridNitroDownloaderSpec``
@@ -14,8 +13,7 @@ public protocol HybridNitroDownloaderSpec_protocol: HybridObject {
   
 
   // Methods
-  func multiply(a: Double, b: Double) throws -> Double
-  func download(url: String, headers: Dictionary<String, String>) throws -> Void
+  func download(url: String) throws -> Void
 }
 
 public extension HybridNitroDownloaderSpec_protocol {

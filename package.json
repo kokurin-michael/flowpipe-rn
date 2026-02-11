@@ -24,7 +24,8 @@
     "clean": "watchman watch-del-all && rm -rf node_modules ios/Pods ios/Podfile.lock ~/Library/Developer/Xcode/DerivedData && yarn cache clean",
     "rename": "npx react-native-rename@latest \"FlowPipe\" -b \"flowpipe.io\" --iosBundleID \"io.flowpipe\" --skipGitStatusCheck",
     "splash": "yarn react-native-bootsplash generate android/app/src/main/play_store_512.png --platforms=android,ios --background=#FFFFFF --logo-width=120 --assets-output=src/assets/bootsplash",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "gen": "yarn dlx nitrogen"
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "^5.2.7",

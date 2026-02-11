@@ -15,7 +15,6 @@ namespace NitroDownloader { class HybridNitroDownloaderSpec_cxx; }
 
 
 #include <string>
-#include <unordered_map>
 
 #include "NitroDownloader-Swift-Cxx-Umbrella.hpp"
 
@@ -67,16 +66,8 @@ namespace margelo::nitro::nitrodownloader {
 
   public:
     // Methods
-    inline double multiply(double a, double b) override {
-      auto __result = _swiftPart.multiply(std::forward<decltype(a)>(a), std::forward<decltype(b)>(b));
-      if (__result.hasError()) [[unlikely]] {
-        std::rethrow_exception(__result.error());
-      }
-      auto __value = std::move(__result.value());
-      return __value;
-    }
-    inline void download(const std::string& url, const std::unordered_map<std::string, std::string>& headers) override {
-      auto __result = _swiftPart.download(url, headers);
+    inline void download(const std::string& url) override {
+      auto __result = _swiftPart.download(url);
       if (__result.hasError()) [[unlikely]] {
         std::rethrow_exception(__result.error());
       }

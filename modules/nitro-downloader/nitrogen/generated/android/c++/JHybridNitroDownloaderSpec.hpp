@@ -55,8 +55,7 @@ namespace margelo::nitro::nitrodownloader {
 
   public:
     // Methods
-    double multiply(double a, double b) override;
-    void download(const std::string& url, const std::unordered_map<std::string, std::string>& headers) override;
+    void download(const std::string& url) override;
 
   private:
     friend HybridBase;

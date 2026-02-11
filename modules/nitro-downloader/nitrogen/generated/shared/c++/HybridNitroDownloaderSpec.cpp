@@ -14,7 +14,6 @@ namespace margelo::nitro::nitrodownloader {
     HybridObject::loadHybridMethods();
     // load custom methods/properties
     registerHybrids(this, [](Prototype& prototype) {
-      prototype.registerHybridMethod("multiply", &HybridNitroDownloaderSpec::multiply);
       prototype.registerHybridMethod("download", &HybridNitroDownloaderSpec::download);
     });
   }

@@ -5,10 +5,6 @@ import type {NitroDownloader} from './NitroDownloader.nitro';
 const NitroDownloaderHybridObject =
   NitroModules.createHybridObject<NitroDownloader>('NitroDownloader');
 
-export function download(url: string, headers: Record<string, string>) {
-  return NitroDownloaderHybridObject.download(url, headers);
-}
-
-export function multiply(a: number, b: number): number {
-  return NitroDownloaderHybridObject.multiply(a, b);
+export function download(url: string) {
+  return NitroDownloaderHybridObject.download(url);
 }

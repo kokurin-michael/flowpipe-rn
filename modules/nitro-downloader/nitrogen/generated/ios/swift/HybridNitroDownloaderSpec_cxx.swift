@@ -5,7 +5,6 @@
 /// Copyright © Marc Rousavy @ Margelo
 ///
 
-import Foundation
 import NitroModules
 
 /**
@@ -126,29 +125,9 @@ open class HybridNitroDownloaderSpec_cxx {
 
   // Methods
   @inline(__always)
-  public final func multiply(a: Double, b: Double) -> bridge.Result_double_ {
+  public final func download(url: std.string) -> bridge.Result_void_ {
     do {
-      let __result = try self.__implementation.multiply(a: a, b: b)
-      let __resultCpp = __result
-      return bridge.create_Result_double_(__resultCpp)
-    } catch (let __error) {
-      let __exceptionPtr = __error.toCpp()
-      return bridge.create_Result_double_(__exceptionPtr)
-    }
-  }
-  
-  @inline(__always)
-  public final func download(url: std.string, headers: bridge.std__unordered_map_std__string__std__string_) -> bridge.Result_void_ {
-    do {
-      try self.__implementation.download(url: String(url), headers: { () -> Dictionary<String, String> in
-        var __dictionary = Dictionary<String, String>(minimumCapacity: headers.size())
-        let __keys = bridge.get_std__unordered_map_std__string__std__string__keys(headers)
-        for __key in __keys {
-          let __value = bridge.get_std__unordered_map_std__string__std__string__value(headers, __key)
-          __dictionary[String(__key)] = String(__value)
-        }
-        return __dictionary
-      }())
+      try self.__implementation.download(url: String(url))
       return bridge.create_Result_void_()
     } catch (let __error) {
       let __exceptionPtr = __error.toCpp()

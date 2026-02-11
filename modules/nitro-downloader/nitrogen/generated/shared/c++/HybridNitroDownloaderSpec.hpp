@@ -16,7 +16,6 @@
 
 
 #include <string>
-#include <unordered_map>
 
 namespace margelo::nitro::nitrodownloader {
 
@@ -49,8 +48,7 @@ namespace margelo::nitro::nitrodownloader {
 
     public:
       // Methods
-      virtual double multiply(double a, double b) = 0;
-      virtual void download(const std::string& url, const std::unordered_map<std::string, std::string>& headers) = 0;
+      virtual void download(const std::string& url) = 0;
 
     protected:
       // Hybrid Setup

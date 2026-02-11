@@ -10,7 +10,6 @@
 
 
 #include <string>
-#include <unordered_map>
 
 namespace margelo::nitro::nitrodownloader {
 
@@ -51,20 +50,9 @@ namespace margelo::nitro::nitrodownloader {
   
 
   // Methods
-  double JHybridNitroDownloaderSpec::multiply(double a, double b) {
-    static const auto method = javaClassStatic()->getMethod<double(double /* a */, double /* b */)>("multiply");
-    auto __result = method(_javaPart, a, b);
-    return __result;
-  }
-  void JHybridNitroDownloaderSpec::download(const std::string& url, const std::unordered_map<std::string, std::string>& headers) {
-    static const auto method = javaClassStatic()->getMethod<void(jni::alias_ref<jni::JString> /* url */, jni::alias_ref<jni::JMap<jni::JString, jni::JString>> /* headers */)>("download");
-    method(_javaPart, jni::make_jstring(url), [&]() -> jni::local_ref<jni::JMap<jni::JString, jni::JString>> {
-      auto __map = jni::JHashMap<jni::JString, jni::JString>::create(headers.size());
-      for (const auto& __entry : headers) {
-        __map->put(jni::make_jstring(__entry.first), jni::make_jstring(__entry.second));
-      }
-      return __map;
-    }());
+  void JHybridNitroDownloaderSpec::download(const std::string& url) {
+    static const auto method = javaClassStatic()->getMethod<void(jni::alias_ref<jni::JString> /* url */)>("download");
+    method(_javaPart, jni::make_jstring(url));
   }
 
 } // namespace margelo::nitro::nitrodownloader

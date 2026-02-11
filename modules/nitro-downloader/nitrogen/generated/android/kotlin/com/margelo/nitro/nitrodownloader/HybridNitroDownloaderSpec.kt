@@ -47,11 +47,7 @@ abstract class HybridNitroDownloaderSpec: HybridObject() {
   // Methods
   @DoNotStrip
   @Keep
-  abstract fun multiply(a: Double, b: Double): Double
-  
-  @DoNotStrip
-  @Keep
-  abstract fun download(url: String, headers: Map<String, String>): Unit
+  abstract fun download(url: String): Unit
 
   private external fun initHybrid(): HybridData
 

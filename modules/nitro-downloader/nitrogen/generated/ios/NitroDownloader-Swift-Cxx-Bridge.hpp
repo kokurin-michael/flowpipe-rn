@@ -20,8 +20,6 @@ namespace NitroDownloader { class HybridNitroDownloaderSpec_cxx; }
 #include <NitroModules/Result.hpp>
 #include <exception>
 #include <memory>
-#include <string>
-#include <unordered_map>
 
 /**
  * Contains specialized versions of C++ templated types so they can be accessed from Swift,
@@ -29,31 +27,6 @@ namespace NitroDownloader { class HybridNitroDownloaderSpec_cxx; }
  */
 namespace margelo::nitro::nitrodownloader::bridge::swift {
 
-  // pragma MARK: std::unordered_map<std::string, std::string>
-  /**
-   * Specialized version of `std::unordered_map<std::string, std::string>`.
-   */
-  using std__unordered_map_std__string__std__string_ = std::unordered_map<std::string, std::string>;
-  inline std::unordered_map<std::string, std::string> create_std__unordered_map_std__string__std__string_(size_t size) noexcept {
-    std::unordered_map<std::string, std::string> map;
-    map.reserve(size);
-    return map;
-  }
-  inline std::vector<std::string> get_std__unordered_map_std__string__std__string__keys(const std__unordered_map_std__string__std__string_& map) noexcept {
-    std::vector<std::string> keys;
-    keys.reserve(map.size());
-    for (const auto& entry : map) {
-      keys.push_back(entry.first);
-    }
-    return keys;
-  }
-  inline std::string get_std__unordered_map_std__string__std__string__value(const std__unordered_map_std__string__std__string_& map, const std::string& key) noexcept {
-    return map.find(key)->second;
-  }
-  inline void emplace_std__unordered_map_std__string__std__string_(std__unordered_map_std__string__std__string_& map, const std::string& key, const std::string& value) noexcept {
-    map.emplace(key, value);
-  }
-  
   // pragma MARK: std::shared_ptr<HybridNitroDownloaderSpec>
   /**
    * Specialized version of `std::shared_ptr<HybridNitroDownloaderSpec>`.
@@ -65,15 +38,6 @@ namespace margelo::nitro::nitrodownloader::bridge::swift {
   // pragma MARK: std::weak_ptr<HybridNitroDownloaderSpec>
   using std__weak_ptr_HybridNitroDownloaderSpec_ = std::weak_ptr<HybridNitroDownloaderSpec>;
   inline std__weak_ptr_HybridNitroDownloaderSpec_ weakify_std__shared_ptr_HybridNitroDownloaderSpec_(const std::shared_ptr<HybridNitroDownloaderSpec>& strong) noexcept { return strong; }
-  
-  // pragma MARK: Result<double>
-  using Result_double_ = Result<double>;
-  inline Result_double_ create_Result_double_(double value) noexcept {
-    return Result<double>::withValue(std::move(value));
-  }
-  inline Result_double_ create_Result_double_(const std::exception_ptr& error) noexcept {
-    return Result<double>::withError(error);
-  }
   
   // pragma MARK: Result<void>
   using Result_void_ = Result<void>;

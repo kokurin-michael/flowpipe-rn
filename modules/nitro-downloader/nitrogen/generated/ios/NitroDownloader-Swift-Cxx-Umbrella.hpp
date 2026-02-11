@@ -17,7 +17,6 @@ namespace margelo::nitro::nitrodownloader { class HybridNitroDownloaderSpec; }
 #include <exception>
 #include <memory>
 #include <string>
-#include <unordered_map>
 
 // C++ helpers for Swift
 #include "NitroDownloader-Swift-Cxx-Bridge.hpp"
