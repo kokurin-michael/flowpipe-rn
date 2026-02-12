@@ -6,22 +6,29 @@
  *   node scripts/generate-response-registry.mjs
  *   node scripts/generate-response-registry.mjs ./openapi.json
  *   OPENAPI_SPEC_URL=https://... node scripts/generate-response-registry.mjs
+ *   API_BASE_URL берётся из .env или process.env (для URL спеков).
  */
 
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+import dotenv from 'dotenv';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const CLIENT_PATH = path.join(ROOT, 'src', 'API', 'client.ts');
 const GENERATED_ENDPOINTS = path.join(ROOT, 'src', 'API', 'generated', 'endpoints');
 
+dotenv.config({ path: path.join(ROOT, '.env') });
+
 /**
- * Читает baseUrl из src/API/client.ts (строка вида export const baseUrl = '...').
+ * Возвращает base URL API: из process.env.API_BASE_URL или из client.ts (fallback).
  * @returns {string | null} URL без слэша в конце или null, если не найден.
  */
-function getBaseUrlFromClient() {
+function getBaseUrl() {
+  const fromEnv = process.env.API_BASE_URL?.replace(/\/$/, '');
+  if (fromEnv) return fromEnv;
   if (!fs.existsSync(CLIENT_PATH)) return null;
   const content = fs.readFileSync(CLIENT_PATH, 'utf8');
   const m = content.match(/export\s+const\s+baseUrl\s*=\s*['"`]([^'"`]+)['"`]/);
@@ -79,7 +86,7 @@ async function loadSpec(specPathOrUrl) {
     specPathOrUrl ||
     process.env.OPENAPI_SPEC_URL ||
     (() => {
-      const base = getBaseUrlFromClient();
+      const base = getBaseUrl();
       return base ? `${base}/openapi.json` : null;
     })();
 
@@ -87,7 +94,7 @@ async function loadSpec(specPathOrUrl) {
     throw new Error(
       'Не задан URL OpenAPI-спека.\n\n' +
         'Как исправить:\n' +
-        '1. Задайте baseUrl в src/API/client.ts (export const baseUrl = \'http://...\'), либо\n' +
+        '1. Задайте API_BASE_URL в .env или в src/API/client.ts, либо\n' +
         '2. Передайте путь к файлу: node scripts/generate-response-registry.mjs ./openapi.json, либо\n' +
         '3. Укажите переменную: OPENAPI_SPEC_URL=https://... node scripts/generate-response-registry.mjs',
     );
@@ -97,7 +104,7 @@ async function loadSpec(specPathOrUrl) {
   if (!res.ok) {
     throw new Error(
       `Не удалось загрузить спек: ${res.status} ${url}\n\n` +
-        'Проверьте, что бэкенд запущен и baseUrl в src/API/client.ts указывает на него, ' +
+        'Проверьте, что бэкенд запущен и API_BASE_URL в .env указывает на него, ' +
         'либо передайте путь к сохранённому openapi.json.',
     );
   }

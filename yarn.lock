@@ -5936,6 +5936,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv@npm:^17.2.4":
+  version: 17.2.4
+  resolution: "dotenv@npm:17.2.4"
+  checksum: 10c0/901aeee9cb40860291bdb452f6ca66aada78438331a026b0bd86fd41b94a79752dbc6a8971f4f26e6cafef11b4a27bb12ea99c0cbe7dfa61791f194727f799e5
+  languageName: node
+  linkType: hard
+
 "dunder-proto@npm:^1.0.0, dunder-proto@npm:^1.0.1":
   version: 1.0.1
   resolution: "dunder-proto@npm:1.0.1"
@@ -7299,6 +7306,7 @@ __metadata:
     babel-plugin-module-resolver: "npm:^5.0.2"
     babel-plugin-react-compiler: "npm:^1.0.0"
     dayjs: "npm:^1.11.19"
+    dotenv: "npm:^17.2.4"
     emittery: "npm:^1.2.0"
     eslint: "npm:^8.19.0"
     eslint-config-prettier: "npm:^10.1.8"
@@ -7326,6 +7334,7 @@ __metadata:
     react-i18next: "npm:^16.3.5"
     react-native: "npm:0.82.1"
     react-native-bootsplash: "npm:^6.3.11"
+    react-native-config: "npm:^1.6.1"
     react-native-device-info: "npm:^15.0.1"
     react-native-edge-to-edge: "npm:^1.7.0"
     react-native-gesture-handler: "npm:^2.29.1"
@@ -11139,6 +11148,20 @@ __metadata:
   bin:
     react-native-bootsplash: cli.js
   checksum: 10c0/eb3d41260dfb85a2556b49a846bc66b8b6e20607d62121729591737e151fd19e6c3b8b1efddd785c232f0c2d2ede25de6ed96846101fcecaa3fc518ac6b724dd
+  languageName: node
+  linkType: hard
+
+"react-native-config@npm:^1.6.1":
+  version: 1.6.1
+  resolution: "react-native-config@npm:1.6.1"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+    react-native-windows: ">=0.61"
+  peerDependenciesMeta:
+    react-native-windows:
+      optional: true
+  checksum: 10c0/9e2bbb7fb04bac878471f7b06132d84233c482952fc7dd0b651669a62cd35c35428302c7502a92898402505ec9b8d7997848122356b42de5c072dcce549d5813
   languageName: node
   linkType: hard
 

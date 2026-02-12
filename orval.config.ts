@@ -1,9 +1,14 @@
+import {config} from 'dotenv';
 import {defineConfig} from 'orval';
+
+const parsed = config().parsed;
+const apiBaseUrl =
+  (parsed?.API_BASE_URL ?? 'http://127.0.0.1:8000').replace(/\/$/, '') || 'http://127.0.0.1:8000';
 
 export default defineConfig({
   flowpipe: {
     input: {
-      target: 'http://127.0.0.1:8000/openapi.json',
+      target: `${apiBaseUrl}/openapi.json`,
     },
     output: {
       mode: 'tags-split',
@@ -26,7 +31,7 @@ export default defineConfig({
 
   flowpipeZod: {
     input: {
-      target: 'http://127.0.0.1:8000/openapi.json',
+      target: `${apiBaseUrl}/openapi.json`,
     },
     output: {
       mode: 'tags-split',
