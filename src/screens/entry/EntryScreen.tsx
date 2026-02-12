@@ -5,6 +5,7 @@ import {useTranslation} from 'react-i18next';
 import {KeyboardStickyView} from 'react-native-keyboard-controller';
 import {StyleSheet} from 'react-native-unistyles';
 
+import {useGetExtractInfo} from '@api/generated/endpoints/download/download.ts';
 import {CopyIcon} from '@assets';
 import {AppButton, AppTextInput, KeyboardDismissPressable} from '@components';
 
@@ -18,6 +19,9 @@ export const EntryScreen = () => {
   }, [i18n]);
 
   const {setUrl, onDownloadPress} = useDownload();
+  const {isError, data, isLoading} = useGetExtractInfo({
+    url: 'https://youtu.be/y4ZBSzYUTL0?si=mfBI_qcLrY2QOJ5H',
+  });
 
   return (
     <>

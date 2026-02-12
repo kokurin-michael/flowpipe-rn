@@ -6,8 +6,8 @@
     "paths": {
       "@types": ["@types"],
       "@types/*": ["@types/*"],
-      "@api": ["api"],
-      "@api/*": ["api/*"],
+      "@api": ["API"],
+      "@api/*": ["API/*"],
       "@assets": ["assets"],
       "@assets/*": ["assets/*"],
       "@components": ["components"],

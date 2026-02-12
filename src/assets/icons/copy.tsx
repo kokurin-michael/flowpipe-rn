@@ -1,8 +1,8 @@
-import type {IconProps} from '@types';
 import type {FC} from 'react';
+import type {SvgProps} from 'react-native-svg';
 import Svg, {Path} from 'react-native-svg';
 
-export const CopyIcon: FC<IconProps> = props => {
+export const CopyIcon: FC<SvgProps> = props => {
   return (
     <Svg
       style={props.style}
