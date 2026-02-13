@@ -2516,17 +2516,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-native-async-storage/async-storage@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "@react-native-async-storage/async-storage@npm:2.2.0"
-  dependencies:
-    merge-options: "npm:^3.0.4"
-  peerDependencies:
-    react-native: ^0.0.0-0 || >=0.65 <1.0
-  checksum: 10c0/84900eba46a40225c4ac9bf5eb58885200dc1e789d873ecda46a2a213870cc7110536ed1fd7a74b873071f3603c093958fbd84c635d6f6d4f94bfbb616ffa0ef
-  languageName: node
-  linkType: hard
-
 "@react-native-clipboard/clipboard@npm:^1.16.3":
   version: 1.16.3
   resolution: "@react-native-clipboard/clipboard@npm:1.16.3"
@@ -3188,6 +3177,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rozenite/mmkv-plugin@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@rozenite/mmkv-plugin@npm:1.2.0"
+  dependencies:
+    "@rozenite/plugin-bridge": "npm:1.2.0"
+    nanoevents: "npm:^9.1.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+    react-native-mmkv: "*"
+  checksum: 10c0/90578c068c7a2df1ff602b69c31ee2321cc0555dfa786ca0eb7dcd8dffbeb122fb9a5318ef9355025563d78b272d455b019b8ff90bc29933efe57df37ec24dbb
+  languageName: node
+  linkType: hard
+
 "@rozenite/network-activity-plugin@npm:^1.2.0":
   version: 1.2.0
   resolution: "@rozenite/network-activity-plugin@npm:1.2.0"
@@ -3245,6 +3248,20 @@ __metadata:
   dependencies:
     tslib: "npm:^2.3.0"
   checksum: 10c0/f0deb75fbec968fddb2b69d27fdf96d0f2b140646d96324d57ff6ee600daa69d6c1ab77934ec1ef238fdb10f68a6e6bae030c9f63846dcb7c4ff5a054ff66c39
+  languageName: node
+  linkType: hard
+
+"@rozenite/tanstack-query-plugin@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@rozenite/tanstack-query-plugin@npm:1.2.0"
+  dependencies:
+    "@rozenite/plugin-bridge": "npm:1.2.0"
+    fast-deep-equal: "npm:^3.1.3"
+  peerDependencies:
+    "@tanstack/react-query": ^5.0.0
+    react: "*"
+    react-native: "*"
+  checksum: 10c0/a6b5bf6f06ef306ee37d064d793556fae3165a9fa317a9f5d746b42aa1b0d9f37d8a87f93d781b97860bf3a63a3c7779bb00c35b42d70a404d47d2ce0d8cdd43
   languageName: node
   linkType: hard
 
@@ -7274,7 +7291,6 @@ __metadata:
     "@babel/preset-env": "npm:^7.25.3"
     "@babel/runtime": "npm:^7.25.0"
     "@gorhom/bottom-sheet": "npm:^5.2.7"
-    "@react-native-async-storage/async-storage": "npm:^2.2.0"
     "@react-native-clipboard/clipboard": "npm:^1.16.3"
     "@react-native-community/cli": "npm:20.0.0"
     "@react-native-community/cli-platform-android": "npm:20.0.0"
@@ -7290,9 +7306,11 @@ __metadata:
     "@react-navigation/native-stack": "npm:^7.10.1"
     "@rn-primitives/portal": "npm:^1.3.0"
     "@rozenite/metro": "npm:^1.2.0"
+    "@rozenite/mmkv-plugin": "npm:^1.2.0"
     "@rozenite/network-activity-plugin": "npm:^1.2.0"
     "@rozenite/overlay-plugin": "npm:^1.2.0"
     "@rozenite/react-navigation-plugin": "npm:^1.2.0"
+    "@rozenite/tanstack-query-plugin": "npm:^1.2.0"
     "@tanstack/query-async-storage-persister": "npm:^5.90.22"
     "@tanstack/react-query": "npm:^5.90.21"
     "@tanstack/react-query-persist-client": "npm:^5.90.22"
@@ -7340,6 +7358,7 @@ __metadata:
     react-native-gesture-handler: "npm:^2.29.1"
     react-native-keyboard-controller: "npm:^1.20.0"
     react-native-localize: "npm:^3.6.0"
+    react-native-mmkv: "npm:^4.1.2"
     react-native-nitro-modules: "npm:^0.33.2"
     react-native-reanimated: "npm:^4.1.5"
     react-native-safe-area-context: "npm:^5.6.2"
@@ -8337,13 +8356,6 @@ __metadata:
   version: 4.0.0
   resolution: "is-path-inside@npm:4.0.0"
   checksum: 10c0/51188d7e2b1d907a9a5f7c18d99a90b60870b951ed87cf97595d9aaa429d4c010652c3350bcbf31182e7f4b0eab9a1860b43e16729b13cb1a44baaa6cdb64c46
-  languageName: node
-  linkType: hard
-
-"is-plain-obj@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "is-plain-obj@npm:2.1.0"
-  checksum: 10c0/e5c9814cdaa627a9ad0a0964ded0e0491bfd9ace405c49a5d63c88b30a162f1512c069d5b80997893c4d0181eadc3fed02b4ab4b81059aba5620bfcdfdeb9c53
   languageName: node
   linkType: hard
 
@@ -9580,15 +9592,6 @@ __metadata:
   version: 2.0.0
   resolution: "merge-descriptors@npm:2.0.0"
   checksum: 10c0/95389b7ced3f9b36fbdcf32eb946dc3dd1774c2fdf164609e55b18d03aa499b12bd3aae3a76c1c7185b96279e9803525550d3eb292b5224866060a288f335cb3
-  languageName: node
-  linkType: hard
-
-"merge-options@npm:^3.0.4":
-  version: 3.0.4
-  resolution: "merge-options@npm:3.0.4"
-  dependencies:
-    is-plain-obj: "npm:^2.1.0"
-  checksum: 10c0/02b5891ceef09b0b497b5a0154c37a71784e68ed71b14748f6fd4258ffd3fe4ecd5cb0fd6f7cae3954fd11e7686c5cb64486daffa63c2793bbe8b614b61c7055
   languageName: node
   linkType: hard
 
@@ -11235,6 +11238,17 @@ __metadata:
     react-native-macos:
       optional: true
   checksum: 10c0/d36f00c07d390aa86e72064266d4b21924920a900647bb99175aeccc7f67aad8e4fcebc7c4a932f3faf97221a0e3df78bd08f204bd4ba6fc5afc8386c8d4be71
+  languageName: node
+  linkType: hard
+
+"react-native-mmkv@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "react-native-mmkv@npm:4.1.2"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+    react-native-nitro-modules: "*"
+  checksum: 10c0/713f9c76e732fc010e53203f7dcb9fd571b1d89db13b8ea600ebc3b9505a3c8320e24acabdeb285e7bb0cc0c321d0374cf1a0cca9b211e0852555471aa90e396
   languageName: node
   linkType: hard
 

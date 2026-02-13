@@ -23,6 +23,8 @@ const config = {
 module.exports = withRozenite(mergeConfig(getDefaultConfig(__dirname), config), {
   enabled: process.env.WITH_ROZENITE === 'true',
   include: [
+    '@rozenite/mmkv-plugin',
+    '@rozenite/tanstack-query-plugin',
     '@rozenite/network-activity-plugin',
     '@rozenite/react-navigation-plugin',
     '@rozenite/overlay-plugin',

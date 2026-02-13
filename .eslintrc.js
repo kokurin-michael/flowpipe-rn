@@ -120,7 +120,6 @@ module.exports = {
         ],
       },
     ],
-    'simple-import-sort/exports': 'error',
 
     // Дополнительно полезно (но не конфликтует с simple-import-sort)
     'import/first': 'error',

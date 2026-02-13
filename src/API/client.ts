@@ -6,11 +6,15 @@ const DEFAULT_BASE_URL = 'http://127.0.0.1:8000';
 
 export const baseUrl = (Config.API_BASE_URL ?? DEFAULT_BASE_URL).replace(/\/$/, '') as string;
 
+const DEFAULT_STALE_TIME_MS = 5 * 60 * 1000;
+
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       gcTime: Number.POSITIVE_INFINITY,
+      staleTime: DEFAULT_STALE_TIME_MS,
       networkMode: 'offlineFirst',
+      retry: 1,
     },
   },
 });
