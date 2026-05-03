@@ -11,10 +11,9 @@ export const Container = ({
   containerStyle,
 }: PropsWithChildren & {containerStyle?: StyleProp<ViewStyle>}) => {
   const {state, isFocused} = useAppTextInput();
+  const isError = state === 'error';
 
-  return (
-    <View style={[styles.container(isFocused, state === 'error'), containerStyle]}>{children}</View>
-  );
+  return <View style={[styles.container(isFocused, isError), containerStyle]}>{children}</View>;
 };
 
 const styles = StyleSheet.create(theme => ({
@@ -22,7 +21,8 @@ const styles = StyleSheet.create(theme => ({
     flexDirection: 'row',
     minHeight: 48,
     borderWidth: 1,
-    paddingHorizontal: 16,
+    paddingStart: 16,
+    paddingEnd: 16,
     borderColor: isFocused
       ? isError
         ? theme.colors.error[500]

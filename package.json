@@ -14,7 +14,7 @@
     "ios:staging": "ENVFILE=.env.staging react-native run-ios",
     "ios:prod": "ENVFILE=.env.production react-native run-ios",
     "ios:se": "yarn react-native run-ios --device \"Amnesia Amnesia’s iPhone\"",
-    "ios:pro": "yarn react-native run-ios --device \"iPhone\"",
+    "ios:pro": "ENVFILE=.env.pro.local yarn react-native run-ios --device \"iPhone\"",
     "ios:phone": "xcrun simctl boot \"iPhone 16 Pro\" & open -a Simulator",
     "ios:table": "xcrun simctl boot \"iPad Air 11-inch (M3)\" & open -a Simulator",
     "ios:list": "xcrun simctl list devices",
@@ -31,10 +31,11 @@
     "rename": "npx react-native-rename@latest \"FlowPipe\" -b \"flowpipe.io\" --iosBundleID \"io.flowpipe\" --skipGitStatusCheck",
     "splash": "yarn react-native-bootsplash generate android/app/src/main/play_store_512.png --platforms=android,ios --background=#FFFFFF --logo-width=120 --assets-output=src/assets/bootsplash",
     "postinstall": "patch-package",
-    "apigen": "orval && node scripts/generate-response-registry.mjs"
+    "apigen": "orval"
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "^5.2.7",
+    "@legendapp/list": "^2.0.19",
     "@react-native-clipboard/clipboard": "^1.16.3",
     "@react-native-community/hooks": "^100.1.0",
     "@react-native-community/netinfo": "^11.5.2",
@@ -45,6 +46,7 @@
     "@tanstack/query-async-storage-persister": "^5.90.22",
     "@tanstack/react-query": "^5.90.21",
     "@tanstack/react-query-persist-client": "^5.90.22",
+    "axios": "^1.13.6",
     "dayjs": "^1.11.19",
     "emittery": "^1.2.0",
     "i18next": "^25.7.1",

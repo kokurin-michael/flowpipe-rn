@@ -1,4 +1,4 @@
-import {Container, Input, Message, Placeholder, Root} from './components';
+import {Clear, Container, Input, Message, Placeholder, Root} from './components';
 
 export const AppTextInput = {
   Root,
@@ -6,4 +6,5 @@ export const AppTextInput = {
   Placeholder,
   Message,
   Input,
+  Clear,
 };

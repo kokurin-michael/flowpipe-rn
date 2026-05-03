@@ -3,7 +3,9 @@ import type {TextInput, TextInputProps} from 'react-native';
 
 type AppTextInputState = 'none' | 'success' | 'error';
 
-type AppTextInputRef = {clear: () => void} & Partial<ComponentRef<typeof TextInput>>;
+type AppTextInputRef = {clear: () => void; getText(): string} & Partial<
+  ComponentRef<typeof TextInput>
+>;
 
 type AppTextInputProps = TextInputProps & {onClear?: () => void};
 

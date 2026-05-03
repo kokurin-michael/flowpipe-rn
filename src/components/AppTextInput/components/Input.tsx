@@ -36,6 +36,9 @@ export const Input = ({ref, ...props}: InputProps) => {
       clearAppTextInput();
       props?.onClear?.();
     },
+    getText(): string {
+      return defaultValue;
+    },
   }));
 
   return (
@@ -51,7 +54,10 @@ export const Input = ({ref, ...props}: InputProps) => {
         setFocused(false);
         props.onBlur?.(e);
       }}
-      onChangeText={setText}
+      onChangeText={text => {
+        setText(text);
+        props.onChangeText?.(text);
+      }}
       cursorColor={styles.cursor.color}
       placeholder={undefined}
       style={[styles.font, styles.input(state), styles.paddingVertical, props.style]}

@@ -11,18 +11,35 @@ const STORAGE_ID = 'flowpipe-storage';
 const storage = createMMKV({id: STORAGE_ID});
 
 const storageAdapter = {
-  setItem: async (key: string, value: string): Promise<void> => {
-    await Promise.resolve();
-    storage.set(key, value);
+  async setItem(key: string, value: string): Promise<void> {
+    try {
+      storage.set(key, value);
+    } catch (error) {
+      throw new Error(
+        `MMKV setItem failed for key "${key}": ${error instanceof Error ? error.message : String(error)}`,
+      );
+    }
   },
-  getItem: async (key: string): Promise<string | null> => {
-    await Promise.resolve();
-    const value_1 = storage.getString(key);
-    return value_1 === undefined ? null : value_1;
+
+  async getItem(key: string): Promise<string | null> {
+    try {
+      const value = storage.getString(key);
+      return value ?? null;
+    } catch (error) {
+      throw new Error(
+        `MMKV getItem failed for key "${key}": ${error instanceof Error ? error.message : String(error)}`,
+      );
+    }
   },
-  removeItem: async (key: string): Promise<void> => {
-    await Promise.resolve();
-    storage.remove(key);
+
+  async removeItem(key: string): Promise<void> {
+    try {
+      storage.remove(key);
+    } catch (error) {
+      throw new Error(
+        `MMKV removeItem failed for key "${key}": ${error instanceof Error ? error.message : String(error)}`,
+      );
+    }
   },
 };
 
